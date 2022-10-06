@@ -1,0 +1,4 @@
+GNN:
+https://distill.pub/2021/gnn-intro/
+https://www.freecodecamp.org/news/graph-neural-networks-explained-with-examples/
+https://www.datacamp.com/tutorial/comprehensive-introduction-graph-neural-networks-gnns-tutorial
