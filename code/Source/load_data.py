@@ -33,6 +33,7 @@ def general_tab(path):
     f = h5py.File(path, 'r')
 
     # Load subhalo features
+    #types = (Gas, Dark Matter, unused, Tracers, Stars & Wind particles, Black holes)Quelle: https://www.tng-project.org/data/docs/specifications/#sec2
     SubhaloPos = f["Subhalo/SubhaloPos"][:]/boxsize
     SubhaloMassType = f["Subhalo/SubhaloMassType"][:,4]
     SubhaloLenType = f["Subhalo/SubhaloLenType"][:,4]
@@ -116,7 +117,7 @@ def correct_boundary(pos, boxlength=1.):
 # n_sims: number of simulations, maximum 27 for CV and 1000 for LH
 def create_dataset(simsuite = "IllustrisTNG", simset = "CV", n_sims = 27):
 
-    simpath = simpathroot + simsuite + "/"+simset+"_"
+    simpath = simpath + simsuite + "/"+simset+"_"
     print("Using "+simsuite+" simulation suite, "+simset+" set, "+str(n_sims)+" simulations.")
 
     dataset = []
@@ -134,7 +135,7 @@ def create_dataset(simsuite = "IllustrisTNG", simset = "CV", n_sims = 27):
         for ind in halolist:
 
             # Select subhalos within a halo with index ind
-            tab_halo = tab[tab[:,0]==ind][:,1:]
+            tab_halo = tab[tab[:,0]==ind][:,1:] #1upwards because we don't need the hosthalo id from original tab
 
             # Consider only halos with at least one satellite galaxy (besides the central)
             if tab_halo.shape[0]>1:

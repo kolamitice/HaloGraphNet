@@ -12,6 +12,7 @@ from scipy.spatial.transform import Rotation as Rot
 # This functionality is not well tested
 
 # use GPUs if available
+#print(torch.cuda.current_device())
 if torch.cuda.is_available():
     print("CUDA Available")
     device = torch.device('cuda')

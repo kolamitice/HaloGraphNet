@@ -100,7 +100,7 @@ def visualize_galaxies(MW_gals, M31_gals):
 
 
     #plt.axis('off')
-    fig.savefig("Plots/LocalGroup.png", bbox_inches='tight', dpi=300)
+    fig.savefig("LocalGroup.png", bbox_inches='tight', dpi=300)
 
 
 

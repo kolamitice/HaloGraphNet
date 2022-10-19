@@ -5,13 +5,13 @@
 #-------------------------------------
 
 from main import *
-from Hyperparameters.params_TNG import params as params_TNG
-from Hyperparameters.params_SIMBA import params as params_SIMBA
+from Hyperparameters.params_TNG_CV import params as params_TNG
+from Hyperparameters.params_SIMBA_CV import params as params_SIMBA
 from matplotlib.ticker import MaxNLocator
 from scipy.spatial.transform import Rotation as Rot
 from Source.galaxies import MW_gals, M31_gals
 
-params_list = [params_SIMBA, params_TNG]
+params_list = [params_TNG]
 
 #--- FUNCTIONS ---#
 
@@ -103,7 +103,7 @@ def mass_as_numsats(galaxies_in, subscript, title):
     marks = ["d", "*"]
     linw = [3, 1]
 
-    for ind, suite in enumerate(["SIMBA", "IllustrisTNG"]):
+    for ind, suite in enumerate(["IllustrisTNG"]):
 
         galaxies = galaxies_in.copy()
 
@@ -150,7 +150,7 @@ if __name__=="__main__":
 
 
     # Check rotation invariance
-    for ind, suite in enumerate(["SIMBA", "IllustrisTNG"]):
+    for ind, suite in enumerate(["IllustrisTNG"]):
         print("\n"+suite+"\n")
         halomass_with_rotations(MW_gals, params_list[ind])
         print("\n")
@@ -161,10 +161,10 @@ if __name__=="__main__":
     # Check robustness with different number of satellites
     mass_as_numsats(MW_gals, "MW", "MW")
     mass_as_numsats(M31_gals, "M31", "M31")
-
+    
 
     # Compute the mean mass and uncertainty for the galaxies
-    for ind, suite in enumerate(["SIMBA", "IllustrisTNG"]):
+    for ind, suite in enumerate(["IllustrisTNG"]):
 
         # Milky Way halo
         predict_halomass(MW_gals, params_list[ind])

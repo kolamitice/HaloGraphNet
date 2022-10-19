@@ -1,0 +1,2 @@
+Wieso benutzt er nur die Masse/Anzahl/comvingradius von Stars und Winds und Rest nicht??
+Boundary conditions bzw erklären wie das mit den boxen ist bei der simulation.
