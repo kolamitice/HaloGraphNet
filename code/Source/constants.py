@@ -20,8 +20,8 @@ random.seed(12345)
 hred = 0.7
 
 # Root path for simulations
-simpathroot = "/home/kola/projektarbeiten/dark_matter/code/data/"
-
+#simpathroot = "/home/kola/projektarbeiten/dark_matter/code/data/"
+simpathroot = "C:/Users/melvi/projektarbeit/halo/code/data/"
 # Box size in comoving kpc/h
 boxsize = 25.e3
 

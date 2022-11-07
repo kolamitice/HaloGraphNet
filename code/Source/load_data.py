@@ -117,7 +117,7 @@ def correct_boundary(pos, boxlength=1.):
 # n_sims: number of simulations, maximum 27 for CV and 1000 for LH
 def create_dataset(simsuite = "IllustrisTNG", simset = "CV", n_sims = 27):
 
-    simpath = simpath + simsuite + "/"+simset+"_"
+    simpath = simpathroot + simsuite + "/"+simset+"_"
     print("Using "+simsuite+" simulation suite, "+simset+" set, "+str(n_sims)+" simulations.")
 
     dataset = []

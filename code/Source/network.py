@@ -79,7 +79,6 @@ class ModelGNN(torch.nn.Module):
         meanpool = global_mean_pool(x, batch)
         maxpool = global_max_pool(x, batch)
         #self.pooled = torch.cat([addpool, meanpool, maxpool], dim=1)
-        self.pooled = torch.cat([addpool, meanpool, maxpool, u], dim=1)
-
+        self.pooled = torch.cat([addpool, meanpool, maxpool, u], dim=1) #dimension 1,20
         # Final linear layer
         return self.lin(self.pooled)
