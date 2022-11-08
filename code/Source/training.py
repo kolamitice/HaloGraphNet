@@ -12,7 +12,6 @@ from scipy.spatial.transform import Rotation as Rot
 # This functionality is not well tested
 
 # use GPUs if available
-#print(torch.cuda.current_device())
 if torch.cuda.is_available():
     print("CUDA Available")
     device = torch.device('cuda')
@@ -51,7 +50,7 @@ def train(loader, model, optimizer):
         optimizer.step()  # Update parameters based on gradients.
         loss_tot += loss.item()
 
-    return loss_tot/len(loader)
+    return loss_tot/len(loader) #mean loss per batch
 
 # Testing/validation step
 def test(loader, model, params, message_reg=sym_reg):
